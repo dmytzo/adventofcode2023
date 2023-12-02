@@ -4,6 +4,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -23,4 +24,13 @@ func ReadFile(path string) []byte {
 
 func InputLines(path string) []string {
 	return strings.Split(string(ReadFile(path)), "\n")
+}
+
+func MustInt(i string) int {
+	num, err := strconv.Atoi(i)
+	if err != nil {
+		log.Fatalf("atoi: %s", err.Error())
+	}
+
+	return num
 }

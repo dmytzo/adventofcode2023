@@ -87,12 +87,7 @@ func taskTwo(input []string) {
 			}
 		}
 
-		num, err := strconv.Atoi(firstNumRaw + lastNumRaw)
-		if err != nil {
-			log.Fatalf("atoi: %s", err.Error())
-		}
-
-		res += num
+		res += tool.MustInt(firstNumRaw + lastNumRaw)
 	}
 
 	fmt.Println(res)
