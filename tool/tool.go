@@ -34,3 +34,12 @@ func MustInt(i string) int {
 
 	return num
 }
+
+func MustIntSlice(i []string) []int {
+	res := make([]int, len(i))
+	for idx, v := range i {
+		res[idx] = MustInt(v)
+	}
+
+	return res
+}
