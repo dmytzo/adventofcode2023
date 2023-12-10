@@ -8,6 +8,10 @@ import (
 	"strings"
 )
 
+type Coord struct {
+	Row, Col int
+}
+
 func ReadFile(path string) []byte {
 	file, err := os.Open(path)
 	if err != nil {
